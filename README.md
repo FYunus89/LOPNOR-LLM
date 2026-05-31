@@ -72,6 +72,7 @@ When `J` is `AUTO`, the C++ code computes:
 ```text
 J = V_inf / ((RPM / 60) * 2 * R_tip)
 ```
+microphone file: first row indicates the microphon number and starting from second row contains x,y,z coordinates for each microphone
 
 ## Notes
 
@@ -79,6 +80,7 @@ The C++ code intentionally repeats the original source code preprocessing recipe
 
 ## Reference
 
+```bibtex
 @inproceedings{yunus2026large,
   title={Large Language Models of Propeller Noise},
   author={Yunus, Furkat},
@@ -86,4 +88,7 @@ The C++ code intentionally repeats the original source code preprocessing recipe
   pages={3301},
   year={2026}
 }
+```
+
 # LOPNOR-LLM
+Will be periodically updated, stay tuned.
