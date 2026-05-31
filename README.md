@@ -32,7 +32,7 @@ The CMake project uses `nlohmann_json`. If it is not already installed, CMake at
 ## 3. Run Prediction
 
 ```bash
-PropNoise/lopnor_release/cpp/build/lopnor_predict \
+cpp/build/lopnor_llm_predict \
   --input PropNoise/lopnor_release/examples/LOPNOR_LLM.i \
   --model-dir PropNoise/lopnor_release/model \
   --metadata PropNoise/lopnor_release/model/lopnor_v71_metadata.json \
