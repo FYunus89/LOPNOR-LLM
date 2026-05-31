@@ -1,30 +1,27 @@
 # LOPNOR_LLM C++/ONNX Inference Release
 
-This folder separates deployment from training.
-
 - `cpp/` is the public C++ inference program. It reads `LOPNOR_LLM.i`, `bladeGeom.txt`, `mics.txt`, the exported ONNX files, and metadata JSON.
 - `examples/` contains the expected text-file layout.
 
 ## 1. The Model
 
-Model output files:
+The trained model is given in onnx and jason format:
 
 ```text
-PropNoise/lopnor_release/model/lopnor_v71_broadband.onnx
-PropNoise/lopnor_release/model/lopnor_v71_tonal.onnx
-PropNoise/lopnor_release/model/lopnor_v71_metadata.json
+model/lopnor_v71_broadband.onnx
+model/lopnor_v71_tonal.onnx
+model/lopnor_v71_metadata.json
 ```
-which are located in model folder.
 
 ## 2. Build The C++ Program
 
 Install ONNX Runtime C/C++ and configure CMake with its root directory:
 
 ```bash
-cmake -S PropNoise/lopnor_release/cpp -B PropNoise/lopnor_release/cpp/build \
+cmake -S cpp -B cpp/build \
   -DONNXRUNTIME_ROOT=/path/to/onnxruntime
 
-cmake --build PropNoise/lopnor_release/cpp/build -j
+cmake --build cpp/build -j
 ```
 
 The CMake project uses `nlohmann_json`. If it is not already installed, CMake attempts to fetch it.
