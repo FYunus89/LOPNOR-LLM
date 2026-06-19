@@ -91,11 +91,11 @@ std::filesystem::path resolveRelativeTo(const std::filesystem::path& base_file,
 
 PropellerInput readMenuFile(const std::filesystem::path& path) {
   const auto lines = activeLines(path);
-  if (lines.size() < 13) {
+  if (lines.size() < 12) {
     throw std::runtime_error(
-        "LOPNOR_LLM.i needs at least 13 active value lines: case, blade count, tip radius, "
+        "LOPNOR_LLM.i needs at least 12 active value lines: case, blade count, tip radius, "
         "hub radius, blade pitch, geometry file, RPM, shaft pitch, shaft yaw, free-stream "
-        "velocity, altitude, advance ratio or AUTO, and microphones file.");
+        "velocity, advance ratio or AUTO, and microphones file.");
   }
 
   PropellerInput out;
@@ -109,13 +109,18 @@ PropellerInput readMenuFile(const std::filesystem::path& path) {
   out.shaft_pitch_deg = firstDouble(lines[7], "shaft_pitch_deg");
   out.shaft_yaw_deg = firstDouble(lines[8], "shaft_yaw_deg");
   out.free_stream_velocity_mps = firstDouble(lines[9], "free_stream_velocity_mps");
-  out.altitude_m = firstDouble(lines[10], "altitude_m");
-  const std::string j_token = firstToken(lines[11]);
+  out.altitude_m = 0.0;
+  const std::size_t j_index = lines.size() >= 13 ? 11 : 10;
+  const std::size_t microphones_index = lines.size() >= 13 ? 12 : 11;
+  if (lines.size() >= 13) {
+    out.altitude_m = firstDouble(lines[10], "altitude_m");
+  }
+  const std::string j_token = firstToken(lines[j_index]);
   out.advance_ratio_auto = isAutoToken(j_token);
   if (!out.advance_ratio_auto) {
     out.advance_ratio_j = std::stod(j_token);
   }
-  out.microphones_file = firstToken(lines[12]);
+  out.microphones_file = firstToken(lines[microphones_index]);
 
   if (out.advance_ratio_auto) {
     const double n_rev_per_s = out.rpm / 60.0;

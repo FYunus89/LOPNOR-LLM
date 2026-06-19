@@ -93,7 +93,7 @@ endif()
 
 set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/usr/local/Cellar/llvm/20.1.2/include/c++/v1;/usr/local/Cellar/llvm/20.1.2/lib/clang/20/include;/Library/Developer/CommandLineTools/SDKs/MacOSX13.sdk/usr/include")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "c++")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/local/opt/libomp/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp;/Library/Developer/CommandLineTools/SDKs/MacOSX13.sdk/usr/lib")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/local/opt/libomp/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp;/Library/Developer/CommandLineTools/SDKs/MacOSX13.sdk/usr/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "/Library/Developer/CommandLineTools/SDKs/MacOSX13.sdk/System/Library/Frameworks")
 set(CMAKE_CXX_COMPILER_CLANG_RESOURCE_DIR "/usr/local/Cellar/llvm/20.1.2/lib/clang/20")
 

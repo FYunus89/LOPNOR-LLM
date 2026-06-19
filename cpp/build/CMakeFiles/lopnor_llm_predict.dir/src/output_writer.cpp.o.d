@@ -1,6 +1,6 @@
 CMakeFiles/lopnor_llm_predict.dir/src/output_writer.cpp.o: \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/src/output_writer.cpp \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/output_writer.hpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/src/output_writer.cpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/output_writer.hpp \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/filesystem \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__config \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__config_site \
@@ -787,7 +787,7 @@ CMakeFiles/lopnor_llm_predict.dir/src/output_writer.cpp.o: \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__filesystem/path_iterator.h \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__filesystem/u8path.h \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/types.hpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/types.hpp \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/fstream \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/random \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__random/bernoulli_distribution.h \

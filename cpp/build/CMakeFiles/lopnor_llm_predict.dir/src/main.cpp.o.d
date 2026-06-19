@@ -1,5 +1,5 @@
 CMakeFiles/lopnor_llm_predict.dir/src/main.cpp.o: \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/src/main.cpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/src/main.cpp \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/filesystem \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__config \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__config_site \
@@ -787,10 +787,10 @@ CMakeFiles/lopnor_llm_predict.dir/src/main.cpp.o: \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__filesystem/u8path.h \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/iostream \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/feature_builder.hpp \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/metadata.hpp \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/types.hpp \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/input_parser.hpp \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/onnx_runner.hpp \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/output_writer.hpp \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/postprocess.hpp
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/feature_builder.hpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/metadata.hpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/types.hpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/input_parser.hpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/onnx_runner.hpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/output_writer.hpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/postprocess.hpp

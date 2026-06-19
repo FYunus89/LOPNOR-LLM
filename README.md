@@ -60,9 +60,8 @@ The `.wav` files are qualitative listening previews. They are normalized audio r
 8. shaft pitch angle `[deg]`
 9. shaft yaw angle `[deg]`
 10. free-stream velocity `[m/s]`
-11. altitude `[m]`
-12. advance ratio `J` or `AUTO`
-13. microphone filename
+11. advance ratio `J` or `AUTO`
+12. microphone filename
 
 When `J` is `AUTO`, the C++ code computes:
 
@@ -70,6 +69,8 @@ When `J` is `AUTO`, the C++ code computes:
 J = V_inf / ((RPM / 60) * 2 * R_tip)
 ```
 microphone file: first row indicates the microphon number and starting from second row contains x,y,z coordinates for each microphone
+
+The LOPNOR model is a learned surrogate, so it is reliable mainly inside the distribution it saw during training. Source-receiver distance affects propagation loss and receiver/directivity features; beyond the largest trained distance, the model is extrapolating rather than interpolating. Neural models generally have no guarantee that this extrapolation follows the correct acoustic physics, so predictions can become unreliable even if the code still returns a number. The model should not be used for source-receiver distances larger than the largest source-receiver distance (46 times of rotor diameter) in the training data set.
 
 ## Notes
 

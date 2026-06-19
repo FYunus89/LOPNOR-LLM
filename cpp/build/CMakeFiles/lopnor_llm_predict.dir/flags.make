@@ -4,7 +4,7 @@
 # compile CXX with /usr/local/opt/llvm/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include -I/Users/yunusi/Documents/LLMs_dev/onnxruntime-osx-x86_64-1.22.0/include -isystem /usr/local/include
+CXX_INCLUDES = -I/Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include -I/Users/yunusi/Documents/LLMs_dev/onnxruntime-osx-x86_64-1.22.0/include -isystem /usr/local/include
 
 CXX_FLAGS = -std=c++17
 

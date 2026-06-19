@@ -1,6 +1,6 @@
 CMakeFiles/lopnor_llm_predict.dir/src/metadata.cpp.o: \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/src/metadata.cpp \
-  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release/cpp/include/lopnor/metadata.hpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/src/metadata.cpp \
+  /Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/include/lopnor/metadata.hpp \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/filesystem \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__config \
   /usr/local/Cellar/llvm/20.1.2/bin/../include/c++/v1/__config_site \
