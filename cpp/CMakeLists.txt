@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_BUILD_RPATH_USE_ORIGIN TRUE)
 
-set(ONNXRUNTIME_ROOT "" CACHE PATH "Path to an ONNX Runtime installation containing include/ and lib/")
+set(ONNXRUNTIME_ROOT "" CACHE PATH "/path/to/onnxruntime/contains/lib/include etc")
 
 find_path(ONNXRUNTIME_INCLUDE_DIR
   NAMES onnxruntime_cxx_api.h
@@ -19,7 +19,7 @@ find_library(ONNXRUNTIME_LIBRARY
 if(NOT ONNXRUNTIME_INCLUDE_DIR OR NOT ONNXRUNTIME_LIBRARY)
   message(FATAL_ERROR
     "Could not find ONNX Runtime. Configure with "
-    "-DONNXRUNTIME_ROOT=/path/to/onnxruntime")
+    "-DONNXRUNTIME_ROOT=${DONNXRUNTIME_ROOT}")
 endif()
 
 find_package(nlohmann_json QUIET)

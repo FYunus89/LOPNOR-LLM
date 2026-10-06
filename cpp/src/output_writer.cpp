@@ -36,27 +36,47 @@ std::string micStem(int index_zero_based) {
 }
 
 void writeSpectrumCsv(const std::filesystem::path& path, const Prediction& prediction) {
-  std::ofstream out(path);
-  if (!out) {
-    throw std::runtime_error("Cannot write spectrum CSV: " + path.string());
-  }
-  out << "frequency_hz,total_db,broadband_db,tonal_db\n";
-  out << std::setprecision(10);
-  for (std::size_t i = 0; i < prediction.raw_freq_hz.size(); ++i) {
-    out << prediction.raw_freq_hz[i] << ',' << prediction.total_db[i] << ',' << prediction.broadband_db[i] << ','
-        << prediction.tonal_db[i] << '\n';
+  auto text_path = path;
+  text_path.replace_extension(".txt");
+  for (const auto& output_path : {path, text_path}) {
+    std::ofstream out(output_path);
+    if (!out) {
+      throw std::runtime_error("Cannot write spectrum: " + output_path.string());
+    }
+    const char sep = output_path == path ? ',' : '\t';
+    out << "frequency_hz" << sep << "total_psd_db_per_hz" << sep
+        << "broadband_psd_db_per_hz" << sep << "tonal_psd_db_per_hz" << sep
+        << "bin_width_hz" << sep << "total_db" << sep << "broadband_db" << sep << "tonal_db\n";
+    out << std::setprecision(10);
+    for (std::size_t i = 0; i < prediction.raw_freq_hz.size(); ++i) {
+      const double width = prediction.raw_bin_width_hz.at(i);
+      if (!(width > 0.0) || !std::isfinite(width)) {
+        throw std::runtime_error("Invalid raw spectrum bin width.");
+      }
+      const double correction = 10.0 * std::log10(width);
+      out << prediction.raw_freq_hz[i] << sep << prediction.total_db[i] << sep
+          << prediction.broadband_db[i] << sep << prediction.tonal_db[i] << sep
+          << width << sep << prediction.total_db[i] + correction << sep
+          << prediction.broadband_db[i] + correction << sep
+          << prediction.tonal_db[i] + correction << '\n';
+    }
   }
 }
 
 void writeBandCsv(const std::filesystem::path& path, const Prediction& prediction) {
-  std::ofstream out(path);
-  if (!out) {
-    throw std::runtime_error("Cannot write one-third-octave CSV: " + path.string());
-  }
-  out << "center_frequency_hz,total_db\n";
-  out << std::setprecision(10);
-  for (std::size_t i = 0; i < prediction.one_third_freq_hz.size(); ++i) {
-    out << prediction.one_third_freq_hz[i] << ',' << prediction.one_third_total_db[i] << '\n';
+  auto text_path = path;
+  text_path.replace_extension(".txt");
+  for (const auto& output_path : {path, text_path}) {
+    std::ofstream out(output_path);
+    if (!out) {
+      throw std::runtime_error("Cannot write one-third-octave spectrum: " + output_path.string());
+    }
+    const char sep = output_path == path ? ',' : '\t';
+    out << "center_frequency_hz" << sep << "total_db\n";
+    out << std::setprecision(10);
+    for (std::size_t i = 0; i < prediction.one_third_freq_hz.size(); ++i) {
+      out << prediction.one_third_freq_hz[i] << sep << prediction.one_third_total_db[i] << '\n';
+    }
   }
 }
 

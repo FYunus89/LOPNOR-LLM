@@ -40,7 +40,9 @@ Outputs per microphone:
 
 ```text
 *_raw_spectrum.csv
+*_raw_spectrum.txt
 *_one_third_octave.csv
+*_one_third_octave.txt
 *_preview.wav
 ```
 
@@ -91,3 +93,19 @@ The LOPNOR model is a learned surrogate, so it is reliable mainly inside the dis
 
 # LOPNOR-LLM
 Will be periodically updated, stay tuned.
+
+### Spectrum output units
+
+Every spectrum CSV also has a matching tab-separated `.txt` file with the same
+header, columns, and numerical precision. Raw spectrum columns are:
+
+- `frequency_hz`: bin center.
+- `total_psd_db_per_hz`, `broadband_psd_db_per_hz`, `tonal_psd_db_per_hz`: original PSD levels.
+- `bin_width_hz`: bin upper edge minus lower edge from the model metadata.
+- `total_db`, `broadband_db`, `tonal_db`: integrated levels for each raw frequency bin,
+  computed as PSD level + `10*log10(bin_width_hz)`.
+
+The original first four raw columns keep their numerical values and order; their
+PSD headers now explicitly identify the units. The new dB levels are per-bin
+levels, not overall levels across the whole spectrum. One-third-octave `total_db`
+already represents integrated band levels and keeps its existing format.

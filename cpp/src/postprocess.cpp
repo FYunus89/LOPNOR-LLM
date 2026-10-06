@@ -130,6 +130,10 @@ std::vector<Prediction> postprocessPredictions(const NeuralOutputs& neural,
     const double correction = 20.0 * std::log10(std::max(r / metadata.reference_distance_m, 1.0e-6));
     Prediction pred;
     pred.raw_freq_hz = metadata.raw_freq_hz;
+    pred.raw_bin_width_hz.resize(static_cast<std::size_t>(N));
+    for (int i = 0; i < N; ++i) {
+      pred.raw_bin_width_hz[i] = metadata.raw_high_hz[i] - metadata.raw_low_hz[i];
+    }
     pred.one_third_freq_hz = metadata.target_freqs_hz;
     pred.total_db.resize(static_cast<std::size_t>(N));
     pred.broadband_db.resize(static_cast<std::size_t>(N));

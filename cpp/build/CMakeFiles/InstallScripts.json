@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_dev/cpp/build/cmake_install.cmake"
+		"/Users/yunusi/Documents/LLMs_dev/LOPNOR_LLMs_release_06_10_2026/cpp/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

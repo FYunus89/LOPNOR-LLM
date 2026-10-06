@@ -39,6 +39,8 @@ struct BladeSection {
 
 struct Prediction {
   std::vector<double> raw_freq_hz;
+  std::vector<double> raw_bin_width_hz;
+  // Raw component levels are power spectral density levels in dB/Hz.
   std::vector<double> total_db;
   std::vector<double> broadband_db;
   std::vector<double> tonal_db;
